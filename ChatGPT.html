@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat GPT</title>
+    <script src="ChatGPT.js?v=14"></script>
+</head>
+<body onload="OnLoad()">
+
+    <div id="idContainer">
+        <textarea id="txtOutput" rows="10" style="margin-top: 10px; width: 100%;" placeholder="Output"></textarea>
+
+        <div>
+            <button type="button" onclick="Send()" id="btnSend">Send</button>
+            <label id="lblSpeak"><input id="chkSpeak" type="checkbox" onclick="SpeechToText()" />Listen</label>
+            <label id="lblMute"><input id="chkMute" type="checkbox" onclick="Mute(this.checked)"/>Mute</label>
+
+            <select id="selModel">
+                <option value="text-davinci-003">text-davinci-003</option>
+                <option value="text-davinci-002">text-davinci-002</option>
+                <option value="code-davinci-002">code-davinci-002</option>
+            </select>
+
+            <select id="selLang" onchange="ChangeLang(this)">
+                <option value="en-US">English (United States)</option>
+                <option value="fr-FR">French (France)</option>
+                <option value="ru-RU">Russian (Russia)</option>
+                <option value="pt-BR">Portuguese (Brazil)</option>
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="de-DE">German (Germany)</option>
+                <option value="it-IT">Italian (Italy)</option>
+                <option value="pl-PL">Polish (Poland)</option>
+                <option value="nl-NL">Dutch (Netherlands)</option>
+            </select>
+
+            <select id="selVoices"></select>
+        </div>
+
+        <textarea id="txtMsg" rows="5" wrap="soft" style="width: 98%; margin-left: 3px; margin-top: 6px" placeholder="Input Text"></textarea>
+
+        <div id="idText"></div>
+    </div>
+
+</body>
+</html>
